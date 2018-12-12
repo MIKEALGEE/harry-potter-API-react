@@ -1,26 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import DisplayContainer from './containers/DisplayContainer.jsx';
 
 class App extends Component {
   render() {
+
+    const houses = [
+      {name: "All", url: "http://hp-api.herokuapp.com/api/characters"},
+      {name: "Gryffindor", url: "http://hp-api.herokuapp.com/api/characters/house/gryffindor"},
+      {name: "Hufflepuff", url: "http://hp-api.herokuapp.com/api/characters/house/hufflepuff"},
+      {name: "Ravenclaw", url: "http://hp-api.herokuapp.com/api/characters/house/ravenclaw"},
+      {name: "Slytherin", url: "http://hp-api.herokuapp.com/api/characters/house/slytherin"}
+    ]
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <DisplayContainer houses={houses}/>
     );
   }
 }
